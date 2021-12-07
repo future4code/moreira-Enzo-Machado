@@ -125,18 +125,20 @@ boasVindas()
 
 */
 
-/* 4 - QUESTÃO
+/*  4 - QUESTÃO
 
 const genero = prompt("Qual genero de filme você vai assistir ? ")
 
 const preco = Number(prompt('Qual preço do ingresso ? '))
 
-switch (genero, preco) {
-    case "fantasia", preco <= 15:
-        console.log('Bom Filme!')
-    break;
-    default:
+function filme() {
+    if (genero === "fantasia" && preco <= 15) {
+        console.log('Bom filme :) ')
+    } else {
         console.log('Escolha outro filme :(')
+    }
 }
+
+filme()
 
 */
