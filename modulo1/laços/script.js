@@ -101,7 +101,7 @@ for (let j = 0; j < arraySuprema.length; j++) {
 
 */
 
-// c) ---> não consegui
+// c)
 
 /*
 function numerosPares() {
