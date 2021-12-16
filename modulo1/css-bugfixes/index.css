@@ -72,8 +72,18 @@ div img {
     color: white;
 }
 
+#container-de-descricao p {
+    width: 700px; 
+    margin-left: auto;
+    margin-right: auto; 
+    position: relative;
+    top: 50px;
+}
+
 #container-de-descricao>ol {
     padding: 15px 0px;
+    position: relative;
+    top: 80px;
 }
 
 #container-para-comprar {
@@ -101,6 +111,8 @@ div:last-child {
 
 table {
     width: 60%;
+    position: absolute;
+    left: 500px;
 }
 
 td button {
