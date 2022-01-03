@@ -27,3 +27,7 @@ footer {
 #menu {
     background-color: #f2d0e0;
 }
+
+#menu p {
+    height: 20px;
+}
