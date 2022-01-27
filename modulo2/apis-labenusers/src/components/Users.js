@@ -3,10 +3,29 @@ import axios from  "axios"
 import React from "react";
 import styled from "styled-components"
 
+const Li = styled.li`
+    display: flex;
+`
+
+const Span = styled.span`
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    padding-right: 10px;
+`
 
 const DeleteButton = styled.span`
-  color: red;
-  cursor: pointer;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    text-align: center;
+    font-size: 28px;
+    padding: 2px;
+    width: 125px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
 `;
 
 const headers = {
@@ -88,14 +107,17 @@ class Users extends React.Component {
                             {this.state.usersList.length === 0 && <div>Carregando...</div>}
                             {this.state.usersList.map(user => {
                                 return(
-                                    <li>
-                                        <span onClick={() => this.mudarPagina(user.id)}>
+                                    <Li>
+                                        <Span onClick={() => this.mudarPagina(user.id)}>
                                             {user.name}
-                                        </span>
-                                        <deleteButton
-                                            onClick={() => this.deleteUsers(user.id)}
-                                        >X</deleteButton>
-                                    </li>
+                                        </Span>
+                                        <DeleteButton 
+                                            className="button"
+                                            onClick={() => this.deleteUsers(user.id)}>
+                                                <span>Delete</span>
+                                            </DeleteButton>
+
+                                    </Li>
                                 )
                             })}
                         </ul>
