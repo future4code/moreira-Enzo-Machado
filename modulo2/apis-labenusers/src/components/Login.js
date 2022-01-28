@@ -6,7 +6,8 @@ const Input = styled.input`
     border: none;
     border-bottom: 2px solid red;
     height: 25px;
-    font-size: 18px;
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
 `
 
 const Container = styled.div`
@@ -17,6 +18,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Press Start 2P', cursive;
 `
 
 const Box = styled.div`
@@ -32,29 +34,62 @@ const Box = styled.div`
 `
 
 const Button = styled.button`
-    
+    font-size: 18px;
+    color: white;
+    height: auto;
+    margin: 10px;
+    font-family: 'Press Start 2P', cursive;
+
+    position: relative;
     display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4caf50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    &::hover {
-        background-color: #3e8e41
+    vertical-align: top;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:ative {
+        top: 2px;
     }
-    &:active {
-        background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-    }
-    
+
+    line-height: 0;
+    border-style: solid;
+    border-width: 20px;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
 `
 
+const Pbutao = styled.p`
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
+    background: #000000;
+
+    background:
+		linear-gradient(135deg, transparent 10px, #000000 0) top left,
+		linear-gradient(225deg, transparent 10px, #000000 0) top right,
+		linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
+		linear-gradient(45deg,  transparent 10px, #000000 0) bottom left;
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+	background-image:
+		radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #000000 15px),
+		radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #000000 15px),
+		radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px),
+		radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
+`
 
 const urlCreateUsers = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
 
@@ -117,7 +152,7 @@ class Login extends React.Component {
                         onChange={this.userEmailChange}>
                     </Input>
 
-                    <Button onClick={this.userCreateUser}>Criar Usuário</Button>
+                    <Button onClick={this.userCreateUser}><Pbutao>Criar</Pbutao></Button>
                 </Box>
             </Container>
         )

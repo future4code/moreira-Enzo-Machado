@@ -10,6 +10,7 @@ const Li = styled.li`
 const Span = styled.span`
     display: flex;
     align-items: center;
+    font-family: 'Press Start 2P', cursive;
     font-size: 25px;
     padding-right: 10px;
 `
@@ -22,10 +23,11 @@ const DeleteButton = styled.span`
     text-align: center;
     font-size: 28px;
     padding: 2px;
-    width: 125px;
+    width: 165px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    font-family: 'Press Start 2P', cursive;
 `;
 
 const headers = {
