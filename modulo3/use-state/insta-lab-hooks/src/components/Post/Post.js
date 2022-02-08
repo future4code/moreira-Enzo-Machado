@@ -70,7 +70,7 @@ const Post = (props) => {
           valorContador={numeroComentarios}
         />
       </PostFooter>
-      {{caixaDeComentario}}
+      {caixaDeComentario}
     </PostContainer>
   )
 }
