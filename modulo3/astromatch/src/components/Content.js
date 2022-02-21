@@ -1,53 +1,73 @@
 import styled from "styled-components";
+import React from "react";
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-const Container = styled.div`
+
+
+const Profile = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-`
-
-const ProfileCard = styled.div`
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 300px;
-    height: 380px;
-    border-radius: 20px;
+    margin: 10px 0;
+    align-content: center;
+    justify-content: space-between;
 
     img {
-        border-radius: 20px 20px 0 0;
-        width: 300px;
-        height: 380px;
+        border-radius: 24px;
+        width: 496px;
+        height: 559px;
     }
 `
-const ProfileInfo = styled.div`
-    padding: 1px 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 
-    h6 {
-        color: grey;
+const ProfileInfo = styled.div`
+    width: 414px;
+    height: 115px;
+    background-color: rgba(255,255,255, 0.70);
+    border-radius: 14px;
+    position: absolute;
+    left: 40px;
+    top: 550px;
+
+    h4 {
+        font-size: 20px;
     }
 `
 
 const Buttons = styled.div`
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 `
 
 const DislikeButton = styled.button`
-
+    background-color: red;
+    border: none;
+    font-size: 24px;
+    border-radius: 24px;
 `
 
 const LikeButton = styled.button`
-
+    background-color: green;
+    border: none;
+    font-size: 24px;
+    border-radius: 24px;
 `
 
 function Content() {
 
-    const [profile, setProfile] = useState({});
+    const [profile, setProfile] = useState([]);
     const [userChoose, setUserChoose] = useState(null);
+    const [gotMatchs, setGotMatchs] = useState(false);
+    const [matchs, setMatchs] = useState([])
+
+    const getMatchs = () => {
+        axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/enzoMachado/matches")
+        .then((res) => {
+            setMatchs(res.data.matches)
+            setGotMatchs(true)
+        })
+        .catch((err) => console.log(err.response))
+    }
 
     const getProfile = () => {
         axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/enzoMachado/person")
@@ -56,8 +76,8 @@ function Content() {
         })
         .catch((err) => {
             console.log(err);
-        })        
-    };
+        })
+    }
 
     const choosePerson = (value) => {
         const body = {
@@ -76,27 +96,26 @@ function Content() {
         })
     }
 
+    useEffect(getMatchs, [profile])
     useEffect(() => {
         getProfile();
-    }, []);
+    }, [])
 
     return(
-        <Container>
-            <ProfileCard>
+        <div>
+            <Profile>
                 <img src={profile.photo} />
                 <ProfileInfo>
-                    <h4>
-                        {profile.name}, {profile.age}
-                        <h6>{profile.bio}</h6>
-                    </h4>
+                    <h4>{profile.name}, {profile.age}</h4>
+                    <h6>{profile.bio}</h6>  
                 </ProfileInfo>
-            </ProfileCard>
+            </Profile>
 
-            <Buttons> 
-                <DislikeButton onClick={() => choosePerson(false)}>Dislike</DislikeButton>
-                <LikeButton onClick={() => choosePerson(true)}>Like</LikeButton>
+            <Buttons>
+                    <DislikeButton onClick={() => choosePerson(false)}>Dislike</DislikeButton>
+                    <LikeButton onClick={() => choosePerson(true)}>Like</LikeButton>
             </Buttons>
-        </Container>
+        </div>
     )
 }
 

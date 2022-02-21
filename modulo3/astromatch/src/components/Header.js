@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
 
 const Top = styled.div`
-    height: 65px;
-    background-color: red;
+    height: 105px;
+    background-color: purple;
     padding: 7px;
     display: flex;
     align-items: center;
@@ -26,10 +26,10 @@ const Top = styled.div`
 function Header() {
     return(
         <Top>
-            <h2>astroMatch</h2>
+            <h2>Astromatch</h2>
             <a>Icon</a>
         </Top>
     )
 }
 
-export default Header;
+export default Header
