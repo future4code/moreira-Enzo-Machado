@@ -1,12 +1,39 @@
 import React from "react";
+import styled from "styled-components";
 
-function ProfileCard() {
+const ProfileCardContainer = styled.div`
+    margin: 16px;
+    border: 1px solid cyan;
+`
+
+const ProfilePicture = styled.img`
+    width: 100%;
+    max-height: 420px;
+`
+
+const ProfileInfo = styled.div`
+    border: 1px solid black;
+    padding: 0 16px; 
+    
+    h4 {
+        font-size: 20px;
+    }
+    
+    h6 {
+        color: gray;
+    }
+`
+
+function ProfileCard(props) {
+    const profile = props.profile
     return(
-        <div>
-            <img src="https://ps.w.org/metronet-profile-picture/assets/icon-256x256.png?rev=2464419"></img>
-            <p>Nome da Pessoa, 30</p>
-            <p>Descrição</p>
-        </div>
+        <ProfileCardContainer>
+            <ProfilePicture src={profile.photo} />
+            <ProfileInfo>
+                <h4>{profile.name},{profile.age}</h4>
+                <h6>{profile.bio}</h6>
+            </ProfileInfo>
+        </ProfileCardContainer>
     )
 }
 

@@ -1,11 +1,19 @@
 import React from "react";
+import styled from "styled-components";
+
+const ButtonsBox = styled.div`
+    border: 1px solid purple;
+    display: flex;
+    justify-content: space-around;
+    margin: 16px;
+`
 
 function ChooseButtons() {
     return(
-        <div>
+        <ButtonsBox>
             <button>Não</button>
             <button>Sim</button>
-        </div>
+        </ButtonsBox>
     )
 }
 
