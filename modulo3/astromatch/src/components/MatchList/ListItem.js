@@ -17,12 +17,13 @@ const Avatar = styled.img`
     width: 25%;
 `
 
-function ListItem() {
+function ListItem(props) {
+    const profile = props.profile
 
     return(
         <BoxItem>
-            <Avatar src="https://cdn.allthings.how/wp-content/uploads/2020/10/allthings.how-how-to-change-your-profile-picture-on-google-meet-profile-photo-759x427.png?width=800" />
-            <p>Nome da pessoa, idade</p>
+            <Avatar src={profile.photo} />
+            <p>{profile.name}, {profile.age}</p>
         </BoxItem>
     )
 }

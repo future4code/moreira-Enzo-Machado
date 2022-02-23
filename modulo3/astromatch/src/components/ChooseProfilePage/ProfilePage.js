@@ -6,7 +6,7 @@ import ProfileCard from "./ProfileCard";
 
 function ProfilePage() {
     
-    const [profile, setProfile] = useState([]);
+    const [profile, setProfile] = useState(undefined);
 
     const getProfile = () => {
         axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/enzoMachado/person")
@@ -21,10 +21,35 @@ function ProfilePage() {
     useEffect(() => {getProfile()
     }, [])
 
+    const chooseProfile = (choice) => {
+        const body = {
+            choice: choice,
+            id: profile.id
+        }
+        setProfile(undefined)
+        axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/enzoMachado/choose-person", body)
+        .then(() => {
+            getProfile()
+        })
+    }
+
+    const onClickNo = () => {
+        chooseProfile(false)
+    }
+
+    const onClickYes = () => {
+        chooseProfile(true)
+    }
+
     return(
         <div>
-            <ProfileCard profile={profile}/>
-            <ChooseButtons/>
+            { profile ?
+                ( <>
+                    <ProfileCard profile={profile}/>
+                    <ChooseButtons onClickNo={onClickNo} onClickYes={onClickYes}/>
+                </>) : <p>Carregando...</p>
+            }
+
         </div>
     )
 }

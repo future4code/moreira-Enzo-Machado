@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import styled from "styled-components";
 
@@ -8,11 +9,11 @@ const ButtonsBox = styled.div`
     margin: 16px;
 `
 
-function ChooseButtons() {
+function ChooseButtons(props) {
     return(
         <ButtonsBox>
-            <button>Não</button>
-            <button>Sim</button>
+            <button onClick={props.onClickNo}>Não</button>
+            <button onClick={props.onClickYes}>Sim</button>
         </ButtonsBox>
     )
 }
