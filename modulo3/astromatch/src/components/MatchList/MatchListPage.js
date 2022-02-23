@@ -5,8 +5,12 @@ import styled from "styled-components";
 import axios from "axios";
 
 const ListContainer = styled.div`
-    border: 1px solid yellow;
+
     padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%
 `
 
 

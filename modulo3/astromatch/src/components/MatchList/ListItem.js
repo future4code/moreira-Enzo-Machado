@@ -4,17 +4,33 @@ import styled from "styled-components";
 const BoxItem = styled.div`
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border-radius: 10px;
+    width: 95%;
+    margin: 2px 10px;
+    cursor: pointer;
+
+    p {
+        font-size: 20px;
+        font-weight: bold;
+    }
 
     :hover {
-        background-color: rgba(0,0,0,0.3)
+        background-color: rgba(0,0,0,0.3);
+        transition: 0.3s;
     }
 `
 
 const Avatar = styled.img`
-    margin-right: 8px;
-    border-radius: 50%;
-    width: 25%;
+    border-radius: 50px;
+    margin: 5px 10px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    
+    img{
+        width: 110px;
+        transform: translateX(-25%);
+    }
 `
 
 function ListItem(props) {

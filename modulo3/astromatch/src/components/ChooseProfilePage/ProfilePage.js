@@ -2,6 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ChooseButtons from "./ChooseButtons";
 import ProfileCard from "./ProfileCard";
+import styled from "styled-components";
+
+const ProfileContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`
 
 
 function ProfilePage() {
@@ -42,7 +49,7 @@ function ProfilePage() {
     }
 
     return(
-        <div>
+        <ProfileContainer>
             { profile ?
                 ( <>
                     <ProfileCard profile={profile}/>
@@ -50,7 +57,7 @@ function ProfilePage() {
                 </>) : <p>Carregando...</p>
             }
 
-        </div>
+        </ProfileContainer>
     )
 }
 

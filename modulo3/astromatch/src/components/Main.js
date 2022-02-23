@@ -7,12 +7,14 @@ import styled from "styled-components";
 
 const MainContainer = styled.div`
     margin: 30px;
-    border-radius: 20px;
+    border-radius: 34px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 720px;
     width: 422px;
     display: flex;
     flex-direction: column;
+    align-content: flex-start;
+    background-color: #8FB9AA;
 `
 
 

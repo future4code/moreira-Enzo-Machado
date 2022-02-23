@@ -4,17 +4,33 @@ import styled from "styled-components";
 const AppBarContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid red;
     align-items: center;
-    padding: 0px 8px;
+    padding: 0px 15px;
+    background-color: #ED8975;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
+`
+
+const ChooseB = styled.button`
+    height: 25px;
+    width: 75px;
+    border: none;
+    border-radius: 34px;
+`
+
+const ListB = styled.button`
+    height: 25px;
+    width: 75px;
+    border: none;
+    border-radius: 34px;
 `
 
 function AppBar(props) {
     return(
         <AppBarContainer>
-            <button onClick={props.gotChooseProfilePage}>Escolher</button>
-            <h4>astroMatch</h4>
-            <button onClick={props.gotMatchListPage}>list</button>
+            <ChooseB onClick={props.gotChooseProfilePage}>Escolher</ChooseB>
+            <h4>Tinder</h4>
+            <ListB onClick={props.gotMatchListPage}>list</ListB>
         </AppBarContainer>
     )
 }

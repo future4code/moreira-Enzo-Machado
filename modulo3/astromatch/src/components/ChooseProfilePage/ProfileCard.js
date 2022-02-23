@@ -2,25 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 const ProfileCardContainer = styled.div`
-    margin: 16px;
-    border: 1px solid cyan;
+    margin-top: 0px;
+    margin: 0px 24px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 75%;
 `
 
 const ProfilePicture = styled.img`
     width: 100%;
     max-height: 420px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
 `
 
 const ProfileInfo = styled.div`
-    border: 1px solid black;
-    padding: 0 16px; 
-    
+    background-color: white;
+    padding: 5px 16px 5px 16px;
+    height: 100px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
     h4 {
         font-size: 20px;
+        margin: 5px 0px;
     }
     
     h6 {
         color: gray;
+        margin: 5px 0px; 
     }
 `
 
