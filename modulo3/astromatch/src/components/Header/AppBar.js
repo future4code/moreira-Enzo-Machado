@@ -3,7 +3,9 @@ import React from "react";
 function AppBar() {
     return(
         <div>
-            AppBar
+            <h4>astroMatch</h4>
+            <button>Escolher</button>
+            <button>list</button>
         </div>
     )
 }
