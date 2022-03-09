@@ -1,22 +1,36 @@
 import React from 'react';
-/*import './CardGrande.css' */
+import styled from 'styled-components';
+import './CardGrande.css'
 
-import { Bigcardcontainer } from "./styles"
-import { Img } from "./styles"
-import { Title } from "./styles"
-import { Info } from "./styles"
+const CardGrandeContainer = styled.div`
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 200px;
 
+    img{
+        width: 70px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
 
+    h4 {
+        margin-bottom: 15px;
+    }
+`
 
 function CardGrande(props) {
     return (
-        <Bigcardcontainer>
-            <Img src={ props.imagem } />
-            <Info>
-                <Title>{ props.nome }</Title>
+        <CardGrandeContainer>
+            <img src={ props.imagem } />
+            <div>
+                <h4>{ props.nome }</h4>
                 <p>{ props.descricao }</p>
-            </Info>
-        </Bigcardcontainer>
+            </div>
+        </CardGrandeContainer>
     )
 }
 

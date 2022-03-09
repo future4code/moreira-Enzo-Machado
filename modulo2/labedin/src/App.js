@@ -4,33 +4,35 @@ import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 
-
 function App() {
   return (
     <div className="App">
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
-          imagem="https://mixdeseries.com.br/wp-content/uploads/2021/07/Exterminador-do-Futuro-serie-Arnold-Schwarzenegger.jpg" 
+          imagem="https://superawesomevectors.com/wp-content/uploads/2019/06/andrew-glouberman-big-mouth-free-vector-character-800x566.jpg" 
           nome="Enzo Machado" 
-          descricao="Meu nome é Sasuke Uchiha. Eu odeio um monte de coisas, e eu particularmente não gosto de nada. O que eu tenho não é um sonho, porque eu vou torná-lo uma realidade. Vou restaurar meu clã, e matar um certo alguém."
+          descricao="Olá, tenho 20 anos. Nordestino, mais precisamente piauíense/teresinense."
         />
         
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
         />
+      </div>
 
-        <CardPequeno 
-          imagem="https://cdn-icons-png.flaticon.com/512/561/561127.png"
-          nome="E-mail:"
-          descricao="trojanmaster@hotmail.com"
+      <div className='page-section-container'>
+        <CardPequeno
+          imagem="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-email-512.png"
+          nome="Email"
+          descricao="dududuedu@hotmail.com"
         />
-
-        <CardPequeno 
-          imagem="https://cdn-icons-png.flaticon.com/512/25/25694.png"
-          nome="Endereço:"
-          descricao="Onde o vento faz a curva, quente - pi"
+      </div>
+      <div className='page-section-container'>
+        <CardPequeno
+          imagem="https://www.iconpacks.net/icons/1/free-pin-icon-48-thumb.png"
+          nome="Pin"
+          descricao="Picket Post Close, número 12"
         />
       </div>
 
@@ -43,28 +45,22 @@ function App() {
         />
         
         <CardGrande 
-          imagem="https://imagens.canaltech.com.br/empresas/4418.400.jpg" 
-          nome="NASA" 
-          descricao="Apontando defeitos." 
-        />
-
-        <CardGrande 
-          imagem="https://imagens.https://1.bp.blogspot.com/-5hGhZ7dG4oY/WDDMghPX74I/AAAAAAAAXrQ/Kc4qUjXtLDwRtL4yqj7LpwR9PyO7m22gQCLcB/s1600/skynet.png.com.br/empresas/4418.400.jpg" 
-          nome="Skynet" 
-          descricao="Criador e chefe da inteligência artificial" 
+          imagem="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Greater_coat_of_arms_of_the_United_States.svg/1200px-Greater_coat_of_arms_of_the_United_States.svg.png" 
+          nome="PENTAGONO" 
+          descricao="Primeira linha de defesa contra ameaças alienigenas. Lider lógico da equipe alfa de Optimus Prime." 
         />
       </div>
 
       <div className="page-section-container">
         <h2>Minhas redes sociais</h2>
         <ImagemButton 
-          imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png" 
-          texto="Facebook" 
+          imagem="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" 
+          texto="@nz4gem" 
         />        
 
         <ImagemButton 
-          imagem="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1-1.png" 
-          texto="Twitter" 
+          imagem="https://cdn-icons-png.flaticon.com/512/174/174857.png" 
+          texto="Enzo Machado" 
         />        
       </div>
     </div>
