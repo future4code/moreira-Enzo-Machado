@@ -104,8 +104,14 @@ const produtosNome = produtos.map((item) => {
 console.log(produtosNome)
 
 // b 
+const cincoDesc = produtos.map((item) => {
+    return {
+        nome: item.nome,
+        preco: Number((item.preco - (item.preco * 0.05)).toFixed(2))
+    }
+})
 
-// ERRO 
+console.log(cincoDesc)
 
 // c)
 const bebidas = produtos.filter((item) => {
@@ -143,4 +149,8 @@ console.log(pokemonAlfab.sort())
 
 // b)
 
-// NÃO CONSEGUI
+const tipo = pokemons.map((item) => {
+    return item.tipo
+})
+const tiposUnic = [...new Set(tipo)]
+console.log(tiposUnic)
