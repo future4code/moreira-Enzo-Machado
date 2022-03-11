@@ -9,7 +9,16 @@ const TarefaList = styled.ul`
 
 const Tarefa = styled.li`
   text-align: left;
+  list-style-type: circle;
+  width: 320px;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 10px;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+  background-color: ${({completa}) => (completa ? '#d7d7d7' : '#fff')};
   /*                                          SE FOR           SE NÃO        */
 `
 
@@ -17,6 +26,71 @@ const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    padding: 6px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    background-color: orange;
+    color: black;
+  }
+
+  button {
+	display: inline-block;
+	position: relative;
+	transition-duration: .3s;
+	transition-property: transform;
+  height: 25px;
+  width: 80px;
+  background-color: black;
+  color: white;
+  border-radius: 15px 30px 30px 15px;
+  padding-left: 10px;
+
+  
+
+  &:before {
+    pointer-events: none;
+		position: absolute;
+		z-index: -1;
+		content: '';
+		top: calc(50% - 10px);
+		left: 0;
+		border-style: solid;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent #ececec transparent transparent;
+		transition-duration: .3s;
+		transition-property: left;
+  }
+
+  &:hover {
+    transform: translateX(5px);
+  }
+
+  &:hover:before {
+    left: -(10px);
+  }
+  }
+`
+
+const AppScreen = styled.div`
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 650px;
+  border-radius: 30px;
+
+  h1 {
+    margin: 50px 0 5 0;
+  }
 `
 
 class App extends React.Component {
@@ -94,11 +168,11 @@ class App extends React.Component {
     })
 
     return (
-      <div className="App">
+      <AppScreen>
         <h1>Lista de tarefas</h1>
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput}/>
-          <button onClick={this.criaTarefa}>Adicionar</button>
+          <button onClick={this.criaTarefa}>Add</button>
         </InputsContainer>
         <br/>
 
@@ -122,7 +196,7 @@ class App extends React.Component {
             )
           })}
         </TarefaList>
-      </div>
+      </AppScreen>
     )
   }
 }
