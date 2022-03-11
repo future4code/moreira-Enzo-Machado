@@ -23,6 +23,11 @@ class App extends React.Component {
         nomeUsuario: "André",
         fotoUsuario: "https://image.freepik.com/fotos-gratis/homem-sorridente-feliz-olhando_176420-16061.jpg",
         fotoPost: "https://picsum.photos/200/150"
+      },
+      {
+        nomeUsuario: "Luna",
+        fotoUsuario: "https://picsum.photos/50/50",
+        fotoPost: "https://picsum.photos/200/150"
       }
     ],
 
