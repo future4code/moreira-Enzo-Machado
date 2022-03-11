@@ -9,7 +9,6 @@ import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 const PostContainer = styled.div`
-  border: 1px solid gray;
   width: 300px;
   margin-bottom: 10px;
 `
@@ -38,6 +37,7 @@ const UserPhoto = styled.img`
 
 const PostPhoto = styled.img`
   width: 100%;
+  border-radius: 10px;
 `
 
 class Post extends React.Component {
