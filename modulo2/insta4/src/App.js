@@ -7,10 +7,20 @@ const AppContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: #c7c7c7;
 `
 
 const NewPost = styled.div`
+  display: flex;
+  flex-direction: column;
   padding-bottom: 35px;
+  width: 100%;
+  border: 1px solid black;
+
+  input {
+    border: none;
+    padding: 10px;
+  }
 `
 
 
