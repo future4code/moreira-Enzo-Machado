@@ -87,6 +87,7 @@ const AppScreen = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   height: 650px;
   border-radius: 30px;
+  background-color: #d7d7d7;
 
   h1 {
     margin: 50px 0 5 0;
@@ -110,11 +111,14 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-    
+    localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas))
   };
 
   componentDidMount() {
-
+    const tarefasCriadas = JSON.parse(localStorage.getItem("tarefas"))
+    this.setState({
+      tarefas: tarefasCriadas
+    })
   };
 
   onChangeInput = (event) => {
