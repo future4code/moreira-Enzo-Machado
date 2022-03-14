@@ -85,7 +85,7 @@ const AppScreen = styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 650px;
+  height: 100vh;
   border-radius: 30px;
   background-color: #d7d7d7;
 
