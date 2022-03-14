@@ -2,9 +2,14 @@ import React from 'react';
 import styled from "styled-components"
 import './App.css';
 
+import TrashIcon  from "./assets/trashIcon.png"
+
 const AppContainer = styled.div`
   background-color: #34AF23;
   height: 99.9vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 const Screen = styled.div`
@@ -67,13 +72,14 @@ const MessageInput = styled.input`
 `
 
 const MessageBox = styled.div`
-  border: 1px solid black;
   display: flex;
   align-items: center;
   padding: 5px;
   background-color: #3cbc8d;
   border-radius: 20px;
   border-bottom-left-radius: 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 10px;
 
   h4 {
     font-size: 18px;
@@ -81,6 +87,21 @@ const MessageBox = styled.div`
 
   p {
     font-size: 16px;
+  }
+`
+
+const Trash = styled.button`
+  border-radius: 10px;
+  border: none;
+  position: center;
+  width: 600px;
+  margin-bottom: 10px;
+  background-color: #3cbc8d;
+  cursor: pointer;
+  transition-duration: 0.4s;
+
+  :hover {
+    background-color: #34A57B;
   }
 `
 
@@ -124,6 +145,10 @@ class App extends React.Component {
     this.setState({messages: newMessagesArray, userValue: '', messageValue: ''})
   }
 
+  cleanMessages = () => {
+    this.setState({messages: []})
+  }
+
   render() {
     return (
 
@@ -148,6 +173,7 @@ class App extends React.Component {
             <button onClick={this.sendMessage}>Enviar</button>
           </InputContainer>
         </Screen>
+        <Trash onClick={this.cleanMessages}>Clean</Trash>
       </AppContainer>
 
     );
