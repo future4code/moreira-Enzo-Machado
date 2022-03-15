@@ -2,11 +2,25 @@ import React from 'react';
 import styled from 'styled-components'
 import Post from './components/Post/Post';
 
-const appContainer = styled.div`
+const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: #c7c7c7;
+`
+
+const NewPost = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 35px;
+  width: 100%;
+  border: 1px solid black;
+
+  input {
+    border: none;
+    padding: 10px;
+  }
 `
 
 
@@ -17,12 +31,17 @@ class App extends React.Component {
       {
         nomeUsuario: "Paulinha",
         fotoUsuario: "https://picsum.photos/50/50",
-        fotoPost: "https://picsum.photos/200/150"
+        fotoPost: "https://picsum.photos/200/200"
       },
       {
         nomeUsuario: "André",
         fotoUsuario: "https://image.freepik.com/fotos-gratis/homem-sorridente-feliz-olhando_176420-16061.jpg",
         fotoPost: "https://picsum.photos/200/150"
+      },
+      {
+        nomeUsuario: "Luna",
+        fotoUsuario: "https://picsum.photos/100/100",
+        fotoPost: "https://picsum.photos/200/100"
       }
     ],
 
@@ -68,25 +87,28 @@ class App extends React.Component {
     })
 
     return (
-      <div className={'appContainer'}>
-        <input 
-          value={this.state.valorInputNome}
-          onChange={this.onChangeInputNome}
-          placeholder={"Nome"}
-        />
-        <input 
-          value={this.state.valorInputPic}
-          onChange={this.onChangeInputPic}
-          placeholder={"Foto de usuario"}
-        />
-        <input 
-          value={this.state.valorInputFPost}
-          onChange={this.onChangeInputFPost}
-          placeholder={"Foto pro Post"}
-        />
-        <button onClick={this.adicionarPost}>Postar</button>
+      <AppContainer>
+        <NewPost>
+          <input 
+            value={this.state.valorInputNome}
+            onChange={this.onChangeInputNome}
+            placeholder={"Nome"}
+          />
+          <input 
+            value={this.state.valorInputPic}
+            onChange={this.onChangeInputPic}
+            placeholder={"Foto de usuario"}
+          />
+          <input 
+            value={this.state.valorInputFPost}
+            onChange={this.onChangeInputFPost}
+            placeholder={"Foto pro Post"}
+          />
+          <button onClick={this.adicionarPost}>Postar</button>
+        </NewPost>
+
         <div>{listaDePostagens}</div>
-      </div>
+      </AppContainer>
     );
   }
 }

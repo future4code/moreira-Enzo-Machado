@@ -24,21 +24,6 @@
   color: white;
 }
 
-/*
-HEADER--AVATAR
-*/
-
-.header--avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.header--buttons {
-  display: flex;
-}
-
 .App-link {
   color: #61dafb;
 }
