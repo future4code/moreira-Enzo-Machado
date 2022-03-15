@@ -1,21 +1,39 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
+import "./CardPequeno.css"
 
-/*import './CardPequeno.css'; */
-import { Title } from "./styles"
-import { Info } from "./styles"
-import { Img } from "./styles"
-import { Smallcardcontainer} from "./styles"
- 
+const SmallCardContainer=styled.div`
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+
+    img {
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    h4 {
+        margin-bottom: 5px;
+    }
+`
 
 function CardPequeno(props) {
-    return (
-        <Smallcardcontainer>
-            <Img src={ props.imagem } />
-            <Info>
-                <Title>{ props.nome }</ Title>
+    return(
+        <SmallCardContainer>
+            <img src={ props.imagem } />
+            <div>
+                <h4>{ props.nome }</h4>
                 <p>{ props.descricao }</p>
-            </ Info>
-        </Smallcardcontainer>
+            </div>
+        </SmallCardContainer>
     )
 }
 
