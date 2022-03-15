@@ -1,22 +1,40 @@
 import './App.css';
-import Main from './components/Main';
-import ResetButton from './components/ResetButton';
 import styled from 'styled-components';
-
-const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
+import React, { useEffect, useState } from "react";
+import DiscoverPage from "./components/DiscoverPage/DiscoverPage"
+import MatchPage from "./components/MatchPage/MatchPage"
+import Buttons from "./components/DiscoverPage/Buttons"
 
 
 function App() {
+
+  const [selectPage, setSelectPage] = useState('choose-profile')
+
+  const renderSelectPage = () => {
+    switch(selectPage) {
+      case 'choose-profile':
+        return <DiscoverPage />
+      case 'match-list':
+        return <MatchPage />
+      default:
+        <DiscoverPage />   
+    } 
+  }
+
+  const gotDiscoverPage = () => {
+      setSelectPage('choose-profile')
+  }
+
+  const gotMatchPage = () => {
+      setSelectPage('match-list')
+  }
+
   return (
     <div className='AppDiv'>
-      <AppContainer>
-        <Main/>
-        <ResetButton/>
-      </AppContainer>
+      <Buttons
+      gotMatchPage={gotMatchPage}
+      />
+      {renderSelectPage()}
     </div>
 
   );
