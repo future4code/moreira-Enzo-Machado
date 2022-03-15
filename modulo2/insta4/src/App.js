@@ -4,8 +4,8 @@ import Post from './components/Post/Post';
 
 const AppContainer = styled.div`
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
   align-items: center;
   background-color: #c7c7c7;
 `
@@ -14,12 +14,12 @@ const NewPost = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 35px;
-  width: 100%;
-  border: 1px solid black;
+  width: 25%;
+  border-radius: 10px;
 
   input {
     border: none;
-    padding: 10px;
+    padding: 6px;
   }
 `
 
@@ -88,6 +88,9 @@ class App extends React.Component {
 
     return (
       <AppContainer>
+
+      <div>{listaDePostagens}</div>
+
         <NewPost>
           <input 
             value={this.state.valorInputNome}
@@ -107,7 +110,7 @@ class App extends React.Component {
           <button onClick={this.adicionarPost}>Postar</button>
         </NewPost>
 
-        <div>{listaDePostagens}</div>
+
       </AppContainer>
     );
   }
