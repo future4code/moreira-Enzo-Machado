@@ -1,94 +1,72 @@
-import React from "react"
+import React from "react";
 import axios from "axios"
 import styled from "styled-components"
 
-const Input = styled.input`
-    border: none;
-    border-bottom: 2px solid red;
-    height: 25px;
-    font-size: 10px;
-    font-family: 'Press Start 2P', cursive;
-`
+const LoginContainer = styled.div`
+    background-color: #FFF89A;
+    padding: 0px 25px 25px 25px;
+    border-radius: 15px;
+    width: 350px;
+    height: 320px;
 
-const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background: #6C7A89;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Press Start 2P', cursive;
-`
-
-const Box = styled.div`
-    width: 300px;
-    height: 300px;
-    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
 
-`
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-const Button = styled.button`
-    font-size: 18px;
-    color: white;
-    height: auto;
-    margin: 10px;
-    font-family: 'Press Start 2P', cursive;
-
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    &:ative {
-        top: 2px;
+    h1 {
+        font-size: 38px;
+        margin-bottom: 5px;
     }
-
-    line-height: 0;
-    border-style: solid;
-    border-width: 20px;
-    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
 `
 
-const Pbutao = styled.p`
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    width: auto;
-    text-align: center;
-    margin: -20px -20px;
-    line-height: 20px;
-    padding: 10px 20px;
-    background: #000000;
+const InputBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
-    background:
-		linear-gradient(135deg, transparent 10px, #000000 0) top left,
-		linear-gradient(225deg, transparent 10px, #000000 0) top right,
-		linear-gradient(315deg, transparent 10px, #000000 0) bottom right,
-		linear-gradient(45deg,  transparent 10px, #000000 0) bottom left;
-	background-size: 50% 50%;
-	background-repeat: no-repeat;
-	background-image:
-		radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #000000 15px),
-		radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #000000 15px),
-		radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #000000 15px),
-		radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
+const InputName = styled.input`
+    font-size: 20px;
+    background-color: #9ADCFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    &:hover {
+        background-color: #85BFDE;
+    }
+`
+
+const InputEmail = styled.input`
+    font-size: 20px;
+    border: none;
+    background-color: #9ADCFF;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    &:hover {
+        background-color: #85BFDE;
+    }
+`
+
+const InputButton = styled.button`
+    font-size: 20px;
+    height: 35px;
+    width: 150px;
+    background-color: #9ADCFF;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    &:hover {
+        background-color: #85BFDE;
+    }
 `
 
 const urlCreateUsers = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
@@ -99,8 +77,8 @@ const headers = {
     }
 }
 
-
 class Login extends React.Component {
+
     state = {
         name: "",
         email: ""
@@ -124,39 +102,40 @@ class Login extends React.Component {
 
         axios.post(urlCreateUsers, body, headers)
         .then(() => {
-            alert(`Parabéns! Usuário ${this.state.name} criado com sucesso`)
+            alert(`Parabéns! Usúario ${this.state.name} criado com sucesso`)
             this.setState({name: "", email: ""})
         })
         .catch(error => {
-            alert("Eita!!! Erro ao criar usuário.")
+            alert("Eita!!! Ocorreu um erro ao criar o usuário.")
             console.log(error)
         })
+
     }
 
     render() {
-        return (
-            <Container>
-                <h1>[ labiUsers ]</h1>
-                <Box>
+        return(
+            <LoginContainer>
+                <h1>laBiUsers</h1>
+                <InputBox>
                     <h2>Login</h2>
-                    <Input
+                    <InputName 
                         placeholder="Nome"
                         type="text"
                         value={this.state.name}
                         onChange={this.userNameChange}>
-                    </Input>
-                    <Input 
+                    </InputName>
+                    <InputEmail 
                         placeholder="E-mail"
-                        type="email"
+                        type="text"
                         value={this.state.email}
                         onChange={this.userEmailChange}>
-                    </Input>
+                    </InputEmail>
 
-                    <Button onClick={this.userCreateUser}><Pbutao>Criar</Pbutao></Button>
-                </Box>
-            </Container>
+                    <InputButton onClick={this.userCreateUser}>Criar</InputButton>
+                </InputBox>
+            </LoginContainer>
         )
     }
 }
 
-export default Login
+export default Login;
