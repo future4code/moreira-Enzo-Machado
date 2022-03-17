@@ -37,6 +37,22 @@ const Header = styled.div`
     }
 `
 
+const CleanButton = styled.button`
+    position: absolute;
+    top: 785px;
+    left: 933px;
+
+    font-size: 20px;
+    background-color: #f57280;
+    border: none;
+    border-radius: 10px;
+    height: 55px;
+
+    &:hover {
+        background-color: #ab4f59;
+    }
+`
+
 function MatchPage() {
 
     const [matches, setMatches] = useState([])
@@ -47,6 +63,14 @@ function MatchPage() {
             setMatches(res.data.matches)
         })
     })
+
+    const onClickReset = () => {
+        axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/enzoMachado/clear")
+        .then((res) => {
+            console.log(res);
+        })
+    }
+
 
 
     return(
@@ -61,6 +85,7 @@ function MatchPage() {
                     return <ItemProfile profile={profile} />
                 })}
             </ListContainer>
+            <CleanButton onClick={onClickReset}>🗑️</CleanButton>
         </AppScreen>
 
     )

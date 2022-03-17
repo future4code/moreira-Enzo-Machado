@@ -2,6 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 const BoxItem = styled.div`
+    display: flex;
+    align-items: center;
+
     height: 100px;
     width: 355px;
     background-color: #fff;

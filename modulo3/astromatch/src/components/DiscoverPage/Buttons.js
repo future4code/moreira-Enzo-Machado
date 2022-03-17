@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Container = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-end;
     margin-top: 55px;
 `
@@ -14,6 +14,10 @@ const YesButton = styled.button`
     background-color: #F57280;
     border-radius: 35px;
     border: none;
+
+    &:hover {
+        background-color: #BA5761;
+    }
 `
 
 const NoButton = styled.button`
@@ -22,7 +26,10 @@ const NoButton = styled.button`
     background-color: #6C7B8F;
     border-radius: 35px;
     border: none;
-    margin-right: 75px;
+
+    &:hover {
+        background-color: #4E5866;
+    }
 `
 
 const MatchList = styled.button`
@@ -32,10 +39,10 @@ const MatchList = styled.button`
     border-radius: 35px;
     border: none;
     margin: 10px;
-    position: absolute;
-    top: 735px;
-    left: 436px;
     
+    &:hover {
+        background-color: #748991;
+    }
 `
 
 
@@ -43,7 +50,6 @@ function Buttons(props) {
     return(
         <Container>
             <NoButton onClick={props.onClickNo}>No</NoButton>
-            <MatchList onClick={props.gotMatchPage}>List</MatchList>
             <YesButton onClick={props.onClickYes}>Yes</YesButton>
         </Container>
     )

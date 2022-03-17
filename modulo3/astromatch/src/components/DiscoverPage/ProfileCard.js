@@ -7,6 +7,7 @@ const ProfileContainer = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
     display: flex;
     flex-direction: column;
