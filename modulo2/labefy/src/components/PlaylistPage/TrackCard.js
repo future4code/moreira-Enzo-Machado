@@ -48,6 +48,7 @@ const DeleteB = styled.img`
     height: 25px;
     width: 25px;
     margin-left: 5px;
+    cursor: pointer;
 `
 
 const TrackCard = (props) => {
