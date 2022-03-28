@@ -1,4 +1,4 @@
-import { NavBar, NavInput } from "./Style"
+import { NavBar } from "./Style"
 
 export default function Header() {
     return(
@@ -8,10 +8,10 @@ export default function Header() {
                 <a>Home</a>
                 <a>Discover</a>
                 <a>Contact Us</a>
-                <NavInput>
+                <div>
                     <input placeholder="Search"></input>
                     <button>Login</button>
-                </NavInput>
+                </div>
             </div>
         </NavBar>
     )

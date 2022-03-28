@@ -3,9 +3,8 @@ import styled from "styled-components"
 export const NavBar = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    
+    justify-content: space-around;
+
     h1{
         margin-right: 50px;
     }
@@ -13,11 +12,10 @@ export const NavBar = styled.div`
     div {
         display: flex;
         align-items: center;
-        margin: 0 15px 0 15px;
+        gap: 30px;
     }
 
     a {
-        margin: 0 15px 0 15px;
         cursor: pointer;
     }
 
@@ -34,6 +32,7 @@ export const NavBar = styled.div`
 
         :focus {
             outline: none;
+            color: #D6FAF9;
         }
     }
 
@@ -45,12 +44,9 @@ export const NavBar = styled.div`
         padding: 20px;
         width: 100px;
         font-weight: bold;
-    }
-`
 
-export const NavInput = styled.div`
-
-    button {
-        margin: 10px;
+        :hover {
+            background: #869d9c;
+        }
     }
 `
