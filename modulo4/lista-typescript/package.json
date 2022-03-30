@@ -1,13 +1,23 @@
 {
-  "dependencies": {
-    "@types/node": "^17.0.23",
-    "typescript": "^4.6.3"
+  "name": "lista-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "exe1": "clear && tsc && node ./build/exercicio1",
+    "exe2": "clear && tsc && node ./build/exercicio2",
+    "exe3": "clear && tsc && node ./build/exercicio3",
+    "exe4": "clear && tsc && node ./build/exercicio4",
+    "exe5": "clear && tsc && node ./build/exercicio5",
+    "exe6": "clear && tsc && node ./build/exercicio6"
   },
-    "name": "lista-typescript",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "start": "tsc && node ./build/index.js"
-    }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "process": "^0.11.10"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23"
+  }
 }

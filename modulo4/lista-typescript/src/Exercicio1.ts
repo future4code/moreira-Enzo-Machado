@@ -1,7 +1,9 @@
-function nomeDate (nome:string, data:string) {
-    const formataData = data.split("/")
+const nome: string = process.argv[2];
+const data: string = process.argv[3];
 
-    return `Olá me chamo ${nome}, nasci no dia ${formataData[0]} do mês de ${formataData[1]} do ano de ${formataData[2]}`
+function aprText (nome:string, data:string): string {
+    const datafor = data.split("/")
+    return `Olá, me chamo ${nome}, nasci no dia ${datafor[0]} do mês de ${datafor[1]} do ano de ${datafor[2]}`
 }
 
-console.log(nomeDate("Enzo", "21/01/2002"))
+console.log(aprText(nome, data))

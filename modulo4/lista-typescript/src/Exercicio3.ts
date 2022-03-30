@@ -1,21 +1,21 @@
-
 enum GENERO {
-    ACAO="ação",
-	DRAMA="drama",
-	COMEDIA="comédia",
-	ROMANCE="romance",
-	TERROR="terror"
+  ACAO = "ação",
+  DRAMA = "drama",
+  COMEDIA = "comédia",
+  ROMANCE = "romance",
+  TERROR = "terror",
 }
-
-type bioFilmes = {
-    nome: string,
-    ano: number,
-    genero: GENERO,
-    nota?: number
+  
+function catalogaFilme(nome: string, ano: number, genero: GENERO, pontuacao?: number) : object {
+  const filme = {
+    nome: nome,
+    anoLancamento: ano,
+    genero: genero,
+    pontuacao: pontuacao,
+  };
+  
+  return filme;
 }
-
-function filmes (filme:bioFilmes): bioFilmes {
-    return filme
-}
-
-console.log(filmes({nome: "Red", ano: 2022, genero: GENERO.DRAMA, nota: 10}))
+  
+console.log(catalogaFilme("Homem Aranha Sem Volta ao Lar", 2021, GENERO.ACAO, 100));
+console.log(catalogaFilme("Duna", 2021, GENERO.ACAO, ));
