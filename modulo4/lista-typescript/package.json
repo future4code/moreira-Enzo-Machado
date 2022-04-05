@@ -9,7 +9,11 @@
     "exe3": "clear && tsc && node ./build/exercicio3",
     "exe4": "clear && tsc && node ./build/exercicio4",
     "exe5": "clear && tsc && node ./build/exercicio5",
-    "exe6": "clear && tsc && node ./build/exercicio6"
+    "exe6": "clear && tsc && node ./build/exercicio6",
+    "exe7": "clear && tsc && node ./build/exercicio7",
+    "exe8": "clear && tsc && node ./build/exercicio8",
+    "exe9": "clear && tsc && node ./build/exercicio9",
+    "exe10": "clear && tsc && node ./build/exercicio10"
   },
   "keywords": [],
   "author": "",
