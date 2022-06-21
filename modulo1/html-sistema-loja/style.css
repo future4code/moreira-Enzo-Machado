@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.network img { 
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.tittle h1 {
+    color: #FF6C23;
+}
+
+.tittle em {
+    color: #00B377;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.estoque img {
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.estoque td {
+    font-family: 'Montserrat', sans-serif;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+h2 {
+    font-family: 'Montserrat' sans-serif;
+}
+
+.funcionarios {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.base p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.map a {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.form-add button {
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: Teal;
+    color: #fff;
+    height: 30px;
+    width: 69px;
+}
+
+.inputs input {
+    width: 100px;
+    height: 20px;
+    background-color: #f2f2f2;
+    padding: 3px;
+    border: 0.2px solid #ccc;
+    color: #333;
+}
+
+.inputs label {
+    font-family: 'Montserrat', sans-serif;
+}

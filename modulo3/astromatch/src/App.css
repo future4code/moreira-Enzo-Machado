@@ -1,0 +1,9 @@
+.AppDiv {
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E9DBF5;
+  height: 100vh;
+
+}
